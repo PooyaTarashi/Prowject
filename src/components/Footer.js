@@ -1,11 +1,11 @@
-import footerLogo from '../icons_assets/Logo.svg'
+import footerLogo from '../icons_assets/footer-logo.2c859235d6c57bb54176.jpg'
 
 const Footer = () => {
     return (
-        <footer>
-        <img src={footerLogo} alt="Little Lemon Logo"/>
+      <footer>
+        <img id="footer-logo" height={150} src={footerLogo} alt="Little Lemon Logo"/>
 
-        <div>
+        <div className='footer-container'>
           <h3>
             Doormat Navigation
           </h3>
@@ -19,7 +19,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        <div>
+        <div className='footer-container'>
           <h3>
             Contact
           </h3>
@@ -30,7 +30,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div className='footer-container'>
           <h3>
             Social Media Links
           </h3>

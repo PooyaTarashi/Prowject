@@ -11,3 +11,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  align-content: center;
+  padding-bottom: 0px;
+}
+
+nav {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+nav > ul {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 15px 15px;
+  padding-top: 15px;
+  margin: 0px;
+}
+
+
+nav > ul > li > a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #e1e5e3;
+}
+
+footer {
+  background-color: #333333;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#footer-logo {
+  padding-top: 25px;
+}
+
+#header-logo {
+  padding: 10px;
+  padding-bottom: 0px;
+  height: 32px;
+}
+
+.footer-container {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container > h3 {
+  padding-left: 40px;
+  margin-bottom: 0px;
+}
+
+footer > div > ul > li {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: #d3d4d4;
+}
