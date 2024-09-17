@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { submitAPI } from "../APIs/hmm";
 
-const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }) => {
+const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, submitForm }) => {
     const style = {
         display: 'grid',
         maxWidth: '200px',
@@ -17,7 +17,7 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`${time}\n${number}\n${occasion}`);
+        // alert(`${time}\n${number}\n${occasion}`);
 
         const formData = {
             date: selectedDate,
@@ -32,6 +32,8 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }
         } else {
             alert("Failed!")
         }
+
+        submitForm(formData);
 
         // clearForm();
     }
