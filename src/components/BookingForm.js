@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitAPI } from "../APIs/hmm";
 
 const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }) => {
     const style = {
@@ -17,13 +18,28 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }
     const handleSubmit = (e) => {
         e.preventDefault();
         alert(`${time}\n${number}\n${occasion}`);
-        clearForm();
+
+        const formData = {
+            date: selectedDate,
+            time: time,
+            number: number,
+            occasion: occasion
+        };
+
+        const success = submitAPI(formData);
+        if (success) {
+            alert(`${time}\n${number}\n${occasion} RESERVED SUCCESSFLLY!`);
+        } else {
+            alert("Failed!")
+        }
+
+        // clearForm();
     }
 
-    const handleDataChange = (e) => {
+    const handleDateChange = (e) => {
         const newDate = e.target.value;
         setSelectedDate(newDate);
-        dispatch({ type: 'UPDATE_DATE', date: newDate })
+        // dispatch({ type: 'UPDATE_DATE', date: newDate })
     }
 
     const clearForm = () => {
@@ -49,7 +65,7 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }
             <br/>
             <h1>Book Now!</h1>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" onChange={ handleDataChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
+            <input type="date" id="res-date" onChange={ handleDateChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
 
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" onChange={ e => setTime(e.target.value) } value={time}>
