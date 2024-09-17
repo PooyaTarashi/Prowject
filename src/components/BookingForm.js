@@ -47,6 +47,7 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate }
         <form style={style} onSubmit={ handleSubmit }>
             <br/>
             <br/>
+            <h1>Book Now!</h1>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" onChange={ handleDataChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
 
