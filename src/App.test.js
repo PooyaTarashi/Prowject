@@ -9,6 +9,11 @@ import { initializeTimes, updateTimes } from './components/BookingPage'
 //   expect(linkElement).toBeInTheDocument();
 // });
 
+jest.mock('./components/BookingPage', () => ({
+  ...jest.requireActual('./components/BookingPage'),
+  fetchAPI: jest.fn()
+}));
+
 test ('Renders the Booking Form heading', () => {
   render(<BookingForm availableTimes={["17:00", "18:00"]} dispatch={jest.fn()} selectedDate={""} setSelectedDate={jest.fn()} />);
   const headingElement = screen.getByRole('heading', { name: /Book Now!/i });
