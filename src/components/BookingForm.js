@@ -28,7 +28,7 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, 
 
         const success = submitAPI(formData);
         if (success) {
-            alert(`${time}\n${number}\n${occasion} RESERVED SUCCESSFLLY!`);
+            alert(`${selectedDate}${time}\n${number}\n${occasion} RESERVED SUCCESSFLLY!`);
         } else {
             alert("Failed!")
         }
@@ -57,8 +57,26 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, 
             touched &&
             (time === '17:00' || time === '18:00' || time === '19:00' || time === '20:00' || time === '21:00' || time === '22:00') &&
             number > 0 &&
-            number < 10
+            number < 10 &&
+            nameValid === true
         );
+    }
+
+    const [ nameValid, setNameValid ] = useState(false);
+
+    const handleNameValidation = (e) => {
+        const nameLen = e.target.value.length;
+        if (nameLen < 5) {
+            setNameValid('MINVIOLATED');
+        } else if (nameLen > 30) {
+            setNameValid('MAXVIOLATED');
+        } else {
+            setNameValid(true);
+        }
+    }
+
+    const nameErrorStyle = {
+        color: '#ee0000'
     }
 
     return (
@@ -66,6 +84,13 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, 
             <br/>
             <br/>
             <h1>Book Now!</h1>
+
+            <label htmlFor="name">Reservation Name</label>
+            <input type="text" id="name" minLength={5} maxLength={31} onChange={ handleNameValidation } data-testid="reservation-name-input" />
+            { (nameValid === 'MINVIOLATED') && <p data-testid="error-min-text" style={ nameErrorStyle }>Name is shorter than required (5 characters)</p> }
+            { (nameValid === 'MAXVIOLATED') && <p style={ nameErrorStyle }>Name is longer than required (30 characters)</p> }
+
+
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" onChange={ handleDateChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
 
@@ -83,7 +108,7 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, 
             <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={ e => setNumber(Number(e.target.value)) } value={number} />
 
             <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" value={occasion} onChange={ e => setOccasion(e.target.value) }>
+            <select id="occasion" value={occasion} onChange={ e => setOccasion(e.target.value) } required>
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>

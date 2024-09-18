@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import BookingForm from './components/BookingForm';
 import { initializeTimes, updateTimes } from './components/BookingPage'
@@ -37,4 +37,16 @@ test('updateTimes returns the same times when UPDATE_DATE action is dispatched',
   const action = { type: 'UPDATE_DATE', date: '2024-09-17' };
   const newState = updateTimes(initialState, action);
   expect(newState).toEqual(initialState);
+});
+
+test("User gives 3 characters input to the name field and error message should be shown", () => {
+  render(<BookingForm availableTimes={["17:00", "18:00"]} dispatch={jest.fn()} selectedDate={""} setSelectedDate={jest.fn()} />);
+  const testName = "Ali";
+  // const textInput = screen.getByLabelText(/Reservation Name/i);
+  const textInput = screen.getByTestId('reservation-name-input');
+
+  fireEvent.change(textInput, { target: { value: testName } });
+  // const errorMin = screen.getByRole('p', { name: /Name is shorter than required (5 characters)/i });
+  const errorMin = screen.getByTestId('error-min-text');
+  expect(errorMin).toBeInTheDocument();
 });
