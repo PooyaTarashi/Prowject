@@ -10,12 +10,12 @@ const Footer = () => {
             Doormat Navigation
           </h3>
           <ul>
-            <li><a href='#home'>Home</a></li>
-            <li><a href='#about'>About</a></li>
-            <li><a href='#menu'>Menu</a></li>
-            <li><a href='#reservations'>Reservations</a></li>
-            <li><a href='#order-online'>Order Online</a></li>
-            <li><a href='#login'>Login</a></li>
+            <li><a href='#home' aria-label='Navigate to home'>Home</a></li>
+            <li><a href='#about' aria-label='Navigate to about'>About</a></li>
+            <li><a href='#menu' aria-label='Navigate to menu'>Menu</a></li>
+            <li><a href='#reservations' aria-label='Navigate to reservation'>Reservations</a></li>
+            <li><a href='#order-online' aria-label='Navigate to order'>Order Online</a></li>
+            <li><a href='#login' aria-label='Navigate to login'>Login</a></li>
           </ul>
         </div>
         
@@ -24,9 +24,9 @@ const Footer = () => {
             Contact
           </h3>
           <ul>
-            <li><a href='#address'>Address</a></li>
-            <li><a href='#phone-number'>phone number</a></li>
-            <li><a href='#email'>email</a></li>
+            <li><a href='#address' aria-label='Address'>Address</a></li>
+            <li><a href='#phone-number' aria-label='Phone number'>phone number</a></li>
+            <li><a href='#email' aria-label='Email Address'>email</a></li>
           </ul>
         </div>
 
@@ -35,9 +35,9 @@ const Footer = () => {
             Social Media Links
           </h3>
           <ul>
-            <li><a href='#address'>Address</a></li>
-            <li><a href='#phone-number'>phone number</a></li>
-            <li><a href='#email'>email</a></li>
+            <li><a href='#address' aria-label='Address'>Address</a></li>
+            <li><a href='#phone-number' aria-label='Phone number'>phone number</a></li>
+            <li><a href='#email' aria-label='Email Address'>email</a></li>
           </ul>
         </div>
       </footer>
