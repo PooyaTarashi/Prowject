@@ -285,7 +285,141 @@ footer a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive design */
+.res-times-table {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.res-times-table li {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reservation-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #f4ce14;
+  outline: none;
+  box-shadow: 0 0 5px rgba(244, 206, 20, 0.5);
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #495e57;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.confirmation-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #f0f8f0;
+  border: 2px solid #88aa88;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.confirmation-message h2 {
+  color: #88aa88;
+  font-size: 2.5rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.confirmation-message h2 {
+  animation: pop-in 0.5s ease-in-out;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .reservation-form {
+    padding: 1.5rem;
+  }
+
+  .input-field {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
 @media (max-width: 768px) {
   .our-story {
     grid-template-columns: 1fr;

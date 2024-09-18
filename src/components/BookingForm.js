@@ -80,40 +80,49 @@ const BookingForm = ({ availableTimes, dispatch, selectedDate, setSelectedDate, 
     }
 
     return (
-        <form style={style} onSubmit={ handleSubmit }>
-            <br/>
-            <br/>
+        <form class="reservation-form" onSubmit={ handleSubmit }>
             <h1>Book Now!</h1>
 
-            <label htmlFor="name">Reservation Name</label>
-            <input type="text" id="name" minLength={5} maxLength={31} onChange={ handleNameValidation } aria-label="Input for the name" data-testid="reservation-name-input" />
-            { (nameValid === 'MINVIOLATED') && <p data-testid="error-min-text" style={ nameErrorStyle }>Name is shorter than required (5 characters)</p> }
-            { (nameValid === 'MAXVIOLATED') && <p style={ nameErrorStyle }>Name is longer than required (30 characters)</p> }
+            <div class="form-group">
+                <label htmlFor="name">Reservation Name</label>
+                <input type="text" id="name" class="input-field" minLength={5} maxLength={31} onChange={ handleNameValidation } aria-label="Input for the name" data-testid="reservation-name-input" />
+                { nameValid === 'MINVIOLATED' && <p data-testid="error-min-text" class="error-text">Name is shorter than required (5 characters)</p> }
+                { nameValid === 'MAXVIOLATED' && <p class="error-text">Name is longer than required (30 characters)</p> }
+            </div>
 
+            <div class="form-group">
+                <label htmlFor="res-date">Choose date</label>
+                <input type="date" id="res-date" class="input-field" aria-label="Input for choosing the date of the reservation" onChange={ handleDateChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
+            </div>
 
-            <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" aria-label="Input for choosing the date of the reservation" onChange={ handleDateChange } onFocus={ () => setTouched(true) } value={ selectedDate } />
-
-            <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" aria-label="Dropmenu to select reservation time" onChange={ e => setTime(e.target.value) } value={time}>
+            <div class="form-group">
+                <label htmlFor="res-time">Choose time</label>
+                <select id="res-time" class="input-field" aria-label="Dropmenu to select reservation time" onChange={ e => setTime(e.target.value) } value={time}>
                 <option>17:00</option>
                 <option>18:00</option>
                 <option>19:00</option>
                 <option>20:00</option>
                 <option>21:00</option>
                 <option>22:00</option>
-            </select>
+                </select>
+            </div>
 
-            <label htmlFor="guests">Number of guests</label>
-            <input type="number" aria-label="Choose the number of people" placeholder="1" min="1" max="10" id="guests" onChange={ e => setNumber(Number(e.target.value)) } value={number} />
+            <div class="form-group">
+                <label htmlFor="guests">Number of guests</label>
+                <input type="number" id="guests" class="input-field" aria-label="Choose the number of people" placeholder="1" min="1" max="10" onChange={ e => setNumber(Number(e.target.value)) } value={number} />
+            </div>
 
-            <label htmlFor="occasion">Occasion</label>
-            <select id="occasion" aria-label="Choose occassion" value={occasion} onChange={ e => setOccasion(e.target.value) } required>
+            <div class="form-group">
+                <label htmlFor="occasion">Occasion</label>
+                <select id="occasion" class="input-field" aria-label="Choose occasion" value={occasion} onChange={ e => setOccasion(e.target.value) } required>
                 <option>Birthday</option>
                 <option>Anniversary</option>
-            </select>
-            <input type="submit" aria-label="Button to submit the form" disabled={!buttonActivated()} value="Make Your reservation" onChange={ e => setOccasion(e.target.value) } />
-        </form>
+                </select>
+            </div>
+
+            <input type="submit" class="submit-button" aria-label="Button to submit the form" disabled={!buttonActivated()} value="Make Your Reservation" />
+            </form>
+
     );
 }
 

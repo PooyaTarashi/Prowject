@@ -1,11 +1,17 @@
 const ConfirmedBooking = () => {
     return (
-        <div>
-            <br/>
-            <br/>
-            <h2 style={{ color: '#88aa88' }}>Confirmed!</h2>
+      <div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>   
+        <div className="confirmation-message">
+            <h2>Confirmed!</h2>
         </div>
+      </div>
     );
-}
-
+  };
+  
 export default ConfirmedBooking;
+  

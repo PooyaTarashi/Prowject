@@ -47,9 +47,13 @@ const BookingPage = () => {
         <>
             <br/>
             <br/>
-            <ul>
-                {availableTimes.map( resTime => <li>{resTime}</li> )}
-            </ul>
+            <br/>
+            <div style={{ display: 'flex' }}>
+                <h3>Available Times:</h3>
+                <ul className="res-times-table">
+                    {availableTimes.map( resTime => <li>{resTime}</li> )}
+                </ul>
+            </div>
 
             <BookingForm
                 availableTimes={availableTimes}
