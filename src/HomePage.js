@@ -1,4 +1,5 @@
 import Hero from './components/Hero'
+import Specials from './components/Specials'
 
 const HomePage = () => {
     return (
@@ -9,49 +10,8 @@ const HomePage = () => {
 
             <Hero />
 
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
-            <h1>Main Here...</h1>
+
+            <Specials />
         </div>
     );
 }

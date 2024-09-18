@@ -116,3 +116,79 @@ footer a:hover {
   background-color: #495e57;
   border: 3px solid #f4ce14;
 }
+
+
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border-radius: 30px;
+  background-color: #edefee;
+  color: #495e57;
+}
+
+.product-card-image {
+  overflow: hidden;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  /* transition: transform .2s; */
+}
+
+.product-card-image:hover {
+  
+  filter: saturate(120%) brightness(120%);
+  transition: filter 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.product-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.product-description {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.card-order-btn {
+  display: flex;
+  justify-content: flex-start;
+  /* position: relative; */
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.motorcycle {
+  /* position: absolute; */
+  /* right: 0; */
+  transition: transform 0.3s ease-in-out;
+  padding-top: 20px;
+  padding-left: 5px;
+}
+
+.card-order-btn:hover .motorcycle {
+  transform: translateX(20px); /* Adjust the distance as needed */
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1px;
+  padding: 100px;
+  padding-top: 0;
+}
+
+.specials-container-heading {
+  padding: 100px;
+  padding-bottom: 10px;
+  padding-left: 120px;
+  padding-top: 50px;
+}
